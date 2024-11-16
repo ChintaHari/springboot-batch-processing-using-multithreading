@@ -14,11 +14,31 @@ Imagine an online store preparing for a Black Friday sale. They plan to offer a 
 
 ### How Are We Doing It?
 The application uses three different approaches to process the batch updates:
-1. **Using Streams**: Processes the list of product IDs sequentially.
-2. **Using Parallel Streams**: Leverages Java’s parallel streams to take advantage of multicore processors for faster processing.
-3. **Using CompletableFuture**: Implements multithreading by creating batches of product IDs and processing each batch in parallel, which can be more efficient in systems where lots of I/O operations are involved.
+1. **`Using Streams`**: Processes the list of product IDs sequentially.
+2. **`Using Parallel Streams`**: Leverages Java’s parallel streams to take advantage of multicore processors for faster processing.
+3. **`Using CompletableFuture`**: Implements multithreading by creating batches of product IDs and processing each batch in parallel, which can be more efficient in systems where lots of I/O operations are involved.
 
 Each method has its own endpoint, allowing the application to be tested under different processing scenarios to understand which method performs best under various conditions.
 
 ### Purpose of This Project
 The primary goal of this project is to demonstrate how different Java concurrency models can be applied to real-world batch processing tasks in a Spring Boot application. It provides a practical example of how modern Java features can be used to improve the performance and scalability of backend systems in retail and e-commerce operations.
+
+## Technologies
+- Java 17
+- Spring Boot 3.3.5
+- Kafka
+- MySQL
+- Spring Data JPA
+- Spring Kafka
+
+## Dependencies
+To handle the project's requirements, the following Maven dependencies are included:
+
+- **`Spring Boot Starter Actuator`**: Helps with monitoring and managing the application.
+- **`Spring Boot Starter Data JPA`**: Configures Spring Data JPA repositories.
+- **`Spring Boot Starter Web`**: Provides all the dependencies and auto-configuration necessary to develop web applications.
+- **`Spring Kafka`**: Enables building applications that can talk to Kafka brokers.
+- **`MySQL Connector Java`**: MySQL JDBC driver for database connectivity.
+- **`Lombok`**: Simplifies the code by generating boilerplate code like getters, setters, and constructors.
+- **`Spring Boot Starter Test & Spring Kafka Test`**: Provides testing utilities for Spring Boot applications including Kafka integration.
+
