@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.springboot_batch_processing_using_multithreading.service.ProductServiceUsingParallelStreams;
 import com.example.springboot_batch_processing_using_multithreading.service.ProductServiceUsingStreams;
 
 @RestController
@@ -17,6 +18,9 @@ public class ProductController {
     @Autowired
     private ProductServiceUsingStreams productServiceUsingStreams;
 
+    @Autowired
+    private ProductServiceUsingParallelStreams productServiceUsingParallelStreams;
+
     @PostMapping("/reset")
     public String resetDB() {
         return productServiceUsingStreams.resetDB();
@@ -25,6 +29,12 @@ public class ProductController {
     @PostMapping("/process/using-streams")
     public String processUsingStreams(@RequestBody List<Long> productIds) {
         productServiceUsingStreams.processUsingStreams(productIds);
+        return "Processing completed";
+    }
+
+    @PostMapping("/process/using-parallel-streams")
+    public String processUsingParallelStreams(@RequestBody List<Long> productIds) {
+        productServiceUsingParallelStreams.processUsingParallelStreams(productIds);
         return "Processing completed";
     }
 }
