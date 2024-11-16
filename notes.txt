@@ -10,5 +10,3 @@
 Errors I faced while starting Kafka and while deserializing:
 1. If you are facing any errors while starting Kafka, I recommend you to delete log files from Kafka/logs folder 
 Follow this link https://stackoverflow.com/questions/51644409/kafka-broker-fails-because-all-log-dirs-have-failed
-
-2. Make sure your serializer class (OrderEvent in order-service) and de-serializer class (OrderEvent in shipping-service) should be in same package and namespace. Otherwise it will fail.
