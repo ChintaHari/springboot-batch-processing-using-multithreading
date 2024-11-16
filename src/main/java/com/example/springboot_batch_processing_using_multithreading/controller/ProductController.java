@@ -3,7 +3,7 @@ package com.example.springboot_batch_processing_using_multithreading.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,12 +17,12 @@ public class ProductController {
     @Autowired
     private ProductServiceUsingStreams productServiceUsingStreams;
 
-    @GetMapping("/reset")
+    @PostMapping("/reset")
     public String resetDB() {
         return productServiceUsingStreams.resetDB();
     }
 
-    @GetMapping("/process/using-streams")
+    @PostMapping("/process/using-streams")
     public String processUsingStreams(@RequestBody List<Long> productIds) {
         productServiceUsingStreams.processUsingStreams(productIds);
         return "Processing completed";
