@@ -29,12 +29,12 @@ public class ProductController {
     @PostMapping("/process/using-streams")
     public String processUsingStreams(@RequestBody List<Long> productIds) {
         productServiceUsingStreams.processUsingStreams(productIds);
-        return "Processing completed";
+        return "Processing completed using streams";
     }
 
     @PostMapping("/process/using-parallel-streams")
     public String processUsingParallelStreams(@RequestBody List<Long> productIds) {
         productServiceUsingParallelStreams.processUsingParallelStreams(productIds);
-        return "Processing completed";
+        return "Processing completed using parallel streams";
     }
 }
