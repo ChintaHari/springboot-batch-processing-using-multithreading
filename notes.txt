@@ -1,7 +1,4 @@
-# 1. How to start MongoDB in local
-Open windows CMD and run "mongod"
-
-# 2. How to start kafka in windows (go to your kafka folder C:\kafka):
+# How to start kafka in windows (go to your kafka folder C:\kafka):
 
 # First start the Zookeper in CMD
 .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
